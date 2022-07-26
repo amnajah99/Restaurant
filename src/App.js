@@ -1,5 +1,8 @@
 import Header from "./Components/Header";
 import Category from "./Components/Category";
+import Menu from "./Components/Menu";
+
+import './App.css'
 
 const App = () => {
 
@@ -231,6 +234,7 @@ const App = () => {
     <div className="app">
       <Header />
       <Category menu_categories={menu_categories} showMenu={showMenu}/>
+      <Menu />
     </div>
   );
 }

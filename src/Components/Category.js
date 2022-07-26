@@ -1,50 +1,14 @@
 import CategoryItem from './CategoryItem';
 import './Category.css';
 
-const Category = () => {
-    const menu_categories = [{
-        name: 'BBQ',
-    },
-    {
-        name: 'BURGER',
-    },
-    {
-        name: 'CHINESE',
-    },
-    {
-        name: 'DRINKS',
-    },
-    {
-        name: 'FRESH JUICE',
-    },
-    {
-        name: 'ICE CREAM',
-    },
-    {
-        name: 'MEATY',
-    },
-    {
-        name: 'PIZZA',
-    },
-    {
-        name: 'SALADS',
-    },
-    {
-        name: 'SEA FOOD',
-    },
-    {
-        name: 'SOUPS',
-    },
-    {
-        name: 'SWEETS',
-    },
-    ]
-    const cat_list = menu_categories.map((cat) => <CategoryItem name={cat.name} />)
+const Category = ({menu_categories}) => {
+    
+    const cat_list = menu_categories.map((cat) => <CategoryItem name={cat.name} items={cat.items} />)
     return (
         <div className="category">
             <div className="category-head">
                 <div className='category-title'>Categories</div>
-                <div className='category-count'>(12)</div>
+                <div className='category-count'>({cat_list.length})</div>
             </div>
             {cat_list}
         </div>

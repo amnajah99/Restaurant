@@ -1,0 +1,20 @@
+.category {
+    width: 20%;
+    border-right: 1px solid #e5e8ec;
+}
+.category-head {
+    background-color: #edeff0;
+    display: flex;
+    justify-content: space-between;
+    height: 48px;
+    align-items: center;
+}
+.category-title {
+    font-size: 15px;
+    margin-left: 12.5%;
+}
+.category-count {
+    font-size: 12px;
+    margin-right: 9.8%;
+    color: #a2acba;
+}

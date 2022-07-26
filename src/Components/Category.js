@@ -1,3 +1,4 @@
+import CategoryItem from './CategoryItem';
 import './Category.css';
 
 const Category = () => {
@@ -7,6 +8,7 @@ const Category = () => {
                 <div className='category-title'>Categories</div>
                 <div className='category-count'>(12)</div>
             </div>
+            <CategoryItem />
         </div>
     );
 }

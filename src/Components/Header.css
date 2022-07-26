@@ -6,15 +6,30 @@
     justify-content: space-between;
 }
 .header-title {
+    width: 8.1%;
+    margin: 16px 32px;
 }
 .header-user {
     background-color: aquamarine;
-    width: fit-content;
 }
-.header-bell {
-    width: 4.4%;
+.header-bell-img {
+    padding: 16px;
+    background-color: #54ad70;
+    margin: 0;
 }
 .header-icon {
     width: 12.4%;
-
+    height: 1;
+    font-size: 13px;
+    font-family: 'Poppins';
+    padding: 14px 27px 10px 16px;
+    background-color: #5bbc79;
+}
+.header-text {
+    margin: 7px 10px 6px 0;
+    color: #fff;
+}
+.header-img  {
+    padding-top: 7px;
+    object-fit: contain;
 }

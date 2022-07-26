@@ -3,3 +3,6 @@
   font-family: 'Poppins' , sans-serif;
   background-color: #f8f8f8;
 }
+.app-main {
+  display: flex;
+}

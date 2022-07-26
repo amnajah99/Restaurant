@@ -237,8 +237,10 @@ const App = () => {
   return (
     <div className="app">
       <Header />
-      <Category menu_categories={menu_categories} showMenu={showMenu} />
-      <Menu items={menuItems} />
+      <div className="app-main">
+        <Category menu_categories={menu_categories} showMenu={showMenu} />
+        <Menu items={menuItems} />
+      </div>
     </div>
   );
 }

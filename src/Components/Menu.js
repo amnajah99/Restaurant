@@ -1,5 +1,6 @@
 import { useState } from "react";
 import MenuCard from "./MenuCard";
+import './Menu.css';
 
 const Menu = ({items}) => {
     console.log(items[0]);
@@ -9,7 +10,7 @@ const Menu = ({items}) => {
         );
     })
     return (
-        <div className="Menu">
+        <div className="menu">
             {menuCard}
         </div>
     );

@@ -1,8 +1,9 @@
 .menu-card {
-    background-color: bisque;
+    background-color: #ffffff;
     height: 112px;
     width: 112px;
     padding: 8px;
+    margin: 24px;
 }
 .menu-card-title {
     font-size: 12px;
@@ -20,7 +21,8 @@
 }
 .menu-card-amount {
     color: #5bbc79;
-    display: flex;
+    display: none;
+    /* display: flex; */
     align-items: flex-start;
 }
 .add-to-cart-btn {

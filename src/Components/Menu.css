@@ -1,4 +1,5 @@
 .menu {
-    width: 35%;
-    
+    /* width: 35%; */
+    display: flex;
+    flex-wrap: wrap;
 }

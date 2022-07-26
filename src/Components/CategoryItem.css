@@ -1,0 +1,16 @@
+.cat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 48px;
+    border-bottom: 1px solid #e5e8ec;
+}
+.cat-item-name {
+    margin-left: 12.5%;
+    font-size: 13px;
+    color: #a2acba;
+}
+.cat-item-arrow {
+    margin-right: 9%;
+    margin-top: 7px;
+}

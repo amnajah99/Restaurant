@@ -1,16 +1,16 @@
 import { useState } from "react";
+import MenuCard from "./MenuCard";
 
 const Menu = ({items}) => {
-    // const [itemList, setItemList] = useState([]);
-    
-    // const useEffect (()=>{
-    //     setItemList(items);
-    // },[itemList])
-
-    // const itemList = items.map((i)=>i.itemName)
     console.log(items[0]);
+    const menuCard = items.map((item)=>{
+        return(
+            <MenuCard name={item.itemName} price={item.price} />
+        );
+    })
     return (
         <div className="Menu">
+            {menuCard}
         </div>
     );
 }

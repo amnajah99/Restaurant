@@ -11,16 +11,16 @@ const App = () => {
     name: 'BBQ',
     items: [
       {
-        itemName: "Dim Sums",
+        itemName: "Brisket",
         price: 700
       },
       {
-        itemName: "Fried Rice",
-        price: 350
+        itemName: "Seekh Kebab",
+        price: 850
       },
       {
-        itemName: "Special Rice",
-        price: 350
+        itemName: "Tikka",
+        price: 550
       },
     ]
   },
@@ -28,7 +28,7 @@ const App = () => {
     name: 'BURGER',
     items: [
       {
-        itemName: "Dim Sums",
+        itemName: "Grilled Chicken",
         price: 700
       },
     ]

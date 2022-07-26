@@ -3,16 +3,13 @@
     width: 100%;
     margin: 0;
     display: flex;
+    justify-content: space-between;
 }
 .header-title {
-    
 }
 .header-user {
     background-color: aquamarine;
     width: fit-content;
-    /* display: inline; */
-    /* float: right; */
-    justify-content: flex-end;
 }
 .header-bell {
     width: 4.4%;

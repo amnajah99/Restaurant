@@ -5,7 +5,7 @@ import bell from '../images/bell.png';
 const Header = () => {
     return (
         <div className='header'>
-            <h4 className='header-title'>Rest<span>aurant</span></h4>
+            <div className='header-title'><h4>Rest<span>aurant</span></h4></div>
             <div className='header-user'>
                 <span className='header-bell'>
                     <img src={bell} />

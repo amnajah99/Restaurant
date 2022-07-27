@@ -241,6 +241,11 @@ const App = () => {
     setCartItems(current => [...current, cItem])
   }
 
+  const removeFromCart = (itemName) => {
+    setCartItems(cartItems.filter((i)=>i.itemName != itemName))
+    console.log('removed: ',itemName)
+  }
+
   console.log('cart item length: ',cartItems)
 
   return (
@@ -249,7 +254,7 @@ const App = () => {
       <div className="app-main">
         <Category menu_categories={menu_categories} showMenu={showMenu} />
         <Menu items={menuItems} showCartItems={showCartItems}/>
-        <Cart cartItemsArr={cartItems}/>
+        <Cart cartItemsArr={cartItems} removeFromCart={removeFromCart}/>
       </div>
     </div>
   );

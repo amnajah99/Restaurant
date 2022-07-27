@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import './CartItem.css';
 
-const CartItem = ({item}) => {
-    const [count, setCount] = useState(0);
+const CartItem = ({item, removeFromCart}) => {
+    const [count, setCount] = useState(1);
 
     const decrement = () => {
-        if(count>0){
+        if(count>1){
             setCount(count-1)
+        }
+        else if(count == 1) {
+            setCount(0)
+            removeFromCart(item.itemName)
         }
     }
 

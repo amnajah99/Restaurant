@@ -2,10 +2,11 @@ import CartItem from './CartItem';
 import icon from '../images/cart-icon.svg';
 import './Cart.css';
 
-const Cart = ({cartItemsArr}) => {
+const Cart = ({cartItemsArr, removeFromCart}) => {
     const mapCart = cartItemsArr.map((item, index)=>{
-        return(<CartItem key={index} item={item}/>);
+        return(<CartItem key={index} item={item} removeFromCart={removeFromCart}/>);
     })
+
     return (
         <div className="cart">
             <div className="cart-head">

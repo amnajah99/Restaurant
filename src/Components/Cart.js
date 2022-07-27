@@ -2,7 +2,10 @@ import CartItem from './CartItem';
 import icon from '../images/cart-icon.svg';
 import './Cart.css';
 
-const Cart = () => {
+const Cart = ({cartItemsArr}) => {
+    const mapCart = cartItemsArr.map((item, index)=>{
+        return(<CartItem key={index} item={item}/>);
+    })
     return (
         <div className="cart">
             <div className="cart-head">
@@ -16,7 +19,7 @@ const Cart = () => {
                 </div>
             </div>
             <div className='cart-items'>
-                <CartItem />
+                {mapCart}
             </div>
         </div>
     );

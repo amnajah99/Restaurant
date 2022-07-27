@@ -228,19 +228,28 @@ const App = () => {
   // console.log(items)
 
   const [menuItems, setMenuItems] = useState(menu_categories[0].items);
+  const [cartItems, setCartItems] = useState([]);
+
 
   const showMenu = (name, items) => {
     // console.log(items);
     setMenuItems(items);
   }
 
+  const showCartItems = (cItem) => {
+    console.log("hello", cItem)
+    setCartItems(current => [...current, cItem])
+  }
+
+  console.log('cart item length: ',cartItems)
+
   return (
     <div className="app">
       <Header />
       <div className="app-main">
         <Category menu_categories={menu_categories} showMenu={showMenu} />
-        <Menu items={menuItems} />
-        <Cart />
+        <Menu items={menuItems} showCartItems={showCartItems}/>
+        <Cart cartItemsArr={cartItems}/>
       </div>
     </div>
   );

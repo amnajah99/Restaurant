@@ -2,11 +2,11 @@ import { useState } from "react";
 import MenuCard from "./MenuCard";
 import './Menu.css';
 
-const Menu = ({items}) => {
-    console.log(items[0]);
+const Menu = ({items, showCartItems}) => {
+    // console.log('items.length: ', items.length);
     const menuCard = items.map((item, index)=>{
         return(
-            <MenuCard key={index} name={item.itemName} price={item.price} />
+            <MenuCard key={index} item={item} showCartItems={showCartItems}/>
         );
     })
     return (

@@ -4,9 +4,9 @@ import './Menu.css';
 
 const Menu = ({items}) => {
     console.log(items[0]);
-    const menuCard = items.map((item)=>{
+    const menuCard = items.map((item, index)=>{
         return(
-            <MenuCard name={item.itemName} price={item.price} />
+            <MenuCard key={index} name={item.itemName} price={item.price} />
         );
     })
     return (

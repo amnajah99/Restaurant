@@ -1,0 +1,46 @@
+.cart-item {
+    border-bottom: 1px solid #e5e8ec;
+    padding-bottom: 25px;
+}
+.ci-name {
+    font-size: 16px;
+    color: #1d1d26;
+}
+.ci-total {
+    text-align: end;
+    font-size: 13px;
+    color: #a2acba;
+    margin: 0;
+    padding: 0;
+}
+.ci-item-details {
+    display: flex;
+    justify-content: space-between;
+}
+.ci-amount {
+    width: 96px;
+}
+.ci-amount-btn {
+    border: 0;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 2px 8px 3px 8px;
+    cursor: pointer;
+}
+.ci-amount-num {
+    width: 38px;
+    text-align: center;
+    border: 0;
+    font-size: 10px;
+    padding: 7px 0 4px 0;
+}
+.ci-quantity {
+    font-size: 13px;
+    color: #1d1d26;
+    font-weight: 500;
+}
+.ci-price{
+    font-size: 15px;
+    font-weight: 500;
+    color: #1d1d26;
+}

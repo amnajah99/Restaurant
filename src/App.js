@@ -1,7 +1,7 @@
 import Header from "./Components/Header";
 import Category from "./Components/Category";
 import Menu from "./Components/Menu";
-
+import Cart from "./Components/Cart";
 import './App.css'
 import { useEffect, useState } from "react";
 
@@ -240,6 +240,7 @@ const App = () => {
       <div className="app-main">
         <Category menu_categories={menu_categories} showMenu={showMenu} />
         <Menu items={menuItems} />
+        <Cart />
       </div>
     </div>
   );

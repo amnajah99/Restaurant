@@ -4,7 +4,7 @@ import './Cart.css';
 
 const Cart = ({cartItemsArr, removeFromCart}) => {
     const mapCart = cartItemsArr.map((item, index)=>{
-        return(<CartItem key={index} item={item} removeFromCart={removeFromCart}/>);
+        return(<CartItem key={index} item={item} removeFromCart={removeFromCart} />);
     })
 
     return (

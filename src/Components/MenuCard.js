@@ -2,18 +2,25 @@ import { useEffect, useState } from 'react';
 import tick from '../images/tick.svg'
 import './MenuCard.css';
 
-const MenuCard = ({ item, showCartItems }) => {
+const MenuCard = ({ item, showCartItems, removedItem }) => {
     const [inCart, setInCart] = useState(false);
     // console.log(item.itemName,'is in cart: ',inCart)
 
     useEffect(()=>{
+        if (item.itemName == removedItem) {
+            setInCart(false);
+        }
+    },[removedItem])
+    
+    useEffect(()=>{
         if(inCart) {
-            console.log(item);
+            console.log("In cart",item);
             showCartItems(item);
         } else {
             console.log("not in cart")
         }
     }, [inCart]);
+
 
     return (
         <div className="menu-card">

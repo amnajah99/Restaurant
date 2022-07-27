@@ -230,6 +230,8 @@ const App = () => {
   const [menuItems, setMenuItems] = useState(menu_categories[0].items);
   const [cartItems, setCartItems] = useState([]);
 
+  const [removedItem, setRemovedItem] = useState('');
+
 
   const showMenu = (name, items) => {
     // console.log(items);
@@ -237,14 +239,15 @@ const App = () => {
   }
 
   const showCartItems = (cItem) => {
-    console.log("hello", cItem)
+    //console.log("hello", cItem)
     setCartItems(current => [...current, cItem])
   }
 
   const removeFromCart = (itemName) => {
+    setRemovedItem(itemName)
     setCartItems(cartItems.filter((i)=>i.itemName != itemName))
-    console.log('removed: ',itemName)
   }
+  console.log('removed: ',removedItem)
 
   console.log('cart item length: ',cartItems)
 
@@ -253,7 +256,7 @@ const App = () => {
       <Header />
       <div className="app-main">
         <Category menu_categories={menu_categories} showMenu={showMenu} />
-        <Menu items={menuItems} showCartItems={showCartItems}/>
+        <Menu items={menuItems} showCartItems={showCartItems} removedItem={removedItem}/>
         <Cart cartItemsArr={cartItems} removeFromCart={removeFromCart}/>
       </div>
     </div>

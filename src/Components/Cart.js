@@ -3,9 +3,25 @@ import icon from '../images/cart-icon.svg';
 import './Cart.css';
 import { useState } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
+
 const Cart = ({ cartItemsArr, removeFromCart }) => {
 
     const [grandTotal, setGrandTotal] = useState(0);
+
+    const onCancel = () => {
+        // cartItemsArr = []
+        // for(var i; i < cartItemsArr ;i++) {
+        //     removeFromCart(cartItemsArr[i].itemCode)
+        // }
+        // cartItemsArr.map((item) => {
+        //     removeFromCart(item.itemCode)
+        // })
+        // cartItemsArr.forEach(item => {
+        //     removeFromCart(item.itemCode)
+        // });
+    }
 
     const getGrandTotal = (total) => {
         setGrandTotal(grandTotal + total)
@@ -16,19 +32,13 @@ const Cart = ({ cartItemsArr, removeFromCart }) => {
     })
 
     const mobileCart = () => {
-        var items = document.getElementById('cart-items-mob');
-        if (items.style.display == "none") {
-            document.getElementById('cart-total-mob').style.display = "block";
-            document.getElementById('cart').style.width = "100%";
-            document.getElementById('cart-head-title').style.display = "inline";
-            items.style.display = "inline";
-        }
-        else {
-            document.getElementById('cart-total-mob').style.display = "none";
-            document.getElementById('cart').style.width = "10%";
-            document.getElementById('cart-head-title').style.display = "none";
-            items.style.display = "none";
-        }
+        document.getElementById('cart-responsive').style.display = "inline";
+        document.getElementById('close-cart-div').style.display = "block"
+    }
+    
+    const closeCart = () => {
+        document.getElementById('cart-responsive').style.display="none"
+        document.getElementById('close-cart-div').style.display = "none"
     }
 
     return (
@@ -43,18 +53,27 @@ const Cart = ({ cartItemsArr, removeFromCart }) => {
                     <span className='cart-head-icon' onClick={mobileCart}><img className='cart-head-img' src={icon} /></span>
                 </div>
             </div>
-            <div id='cart-items-mob' className='cart-items'>
-                {mapCart}
-            </div>
-
-            <div id='cart-total-mob' className='cart-total'>
-                <div className='cart-total-head'>
-                    <div className='grand-total-title'>Grand Total</div>
-                    <div className='grand-total-price'>Rs.{grandTotal}</div>
+            <div id='cart-responsive' className='cart-responsive'>
+                <span id='close-cart-div'>
+                    <FontAwesomeIcon
+                        id='close-cart'
+                        icon={faXmark}
+                        onClick={closeCart}
+                    />
+                </span>
+                <div id='cart-items-mob' className='cart-items'>
+                    {mapCart}
                 </div>
-                <div className='cart-total-btns'>
-                    <button className='cancel-btn'>Cancel</button>
-                    <button className='proceed-btn'>Proceed</button>
+
+                <div id='cart-total-mob' className='cart-total'>
+                    <div className='cart-total-head'>
+                        <div className='grand-total-title'>Grand Total</div>
+                        <div className='grand-total-price'>Rs.{grandTotal}</div>
+                    </div>
+                    <div className='cart-total-btns'>
+                        <button className='cancel-btn' onClick={onCancel}>Cancel</button>
+                        <button className='proceed-btn'>Proceed</button>
+                    </div>
                 </div>
             </div>
         </div>

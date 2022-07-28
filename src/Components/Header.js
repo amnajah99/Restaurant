@@ -1,18 +1,18 @@
 import './Header.css'
-import icon from '../images/cesar-img.jpg'
+import icon from '../images/cesar-img-2.jpg'
 import bell from '../images/bell.png';
+import logo from '../images/Logo.png';
 
 const Header = () => {
     return (
         <div className='header'>
-            <h4 className='header-title'>Rest<span>aurant</span></h4>
+            <div className='header-title'><img src={logo} /></div>
+            
             <div className='header-user'>
-                <span className='header-bell'>
-                    <img src={bell} />
-                </span>
+                <img className='header-bell-img' src={bell} />
                 <span className='header-icon'>
-                    Adam Lane
-                    <img src={icon} />
+                    <span className='header-text'>Adam Lane</span>
+                    <img className='header-img' src={icon} />
                 </span>
             </div>
 

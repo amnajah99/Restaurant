@@ -1,0 +1,14 @@
+.app {
+  margin: 0;
+  font-family: 'Poppins' , sans-serif;
+  background-color: #f8f8f8;
+}
+.app-main {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* @media screen and (max-width: 600px) {
+  .app-main {
+  }
+} */

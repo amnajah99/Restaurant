@@ -1,0 +1,33 @@
+.menu-card {
+    background-color: #ffffff;
+    height: 112px;
+    width: 112px;
+    padding: 8px;
+    margin: 0 10px 10px 10px;
+}
+.menu-card-title {
+    font-size: 12px;
+    margin-top: 16px;
+}
+.menu-card-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    margin-top: 23px;
+    margin-bottom: 9px;
+}
+.menu-card-price {
+    color: #a2acba;
+}
+.menu-card-amount {
+    color: #5bbc79;
+    display: none;
+    align-items: flex-start;
+}
+.add-to-cart-btn {
+    font-size: 11px;
+    color: #ffffff;
+    background-color: black;
+    border: 0;
+    padding: 7px 18px 6px 19px;
+}

@@ -1,23 +1,39 @@
 .header {
-    background-color: antiquewhite;
     width: 100%;
     margin: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 104px 221px;
+    justify-content: space-between;
 }
 .header-title {
-    
+    margin: 16px 32px;
 }
 .header-user {
-    background-color: aquamarine;
-    width: fit-content;
-    /* display: inline; */
-    /* float: right; */
-    justify-content: flex-end;
+    /* background-color: aquamarine; */
+    
 }
-.header-bell {
-    width: 4.4%;
+.header-bell-img {
+    padding: 16px 16px;
+    background-color: #54ad70;
+    margin: 0;
 }
 .header-icon {
-    width: 12.4%;
+    vertical-align: top;
+    font-size: 13px;
+    padding: 21px 27px 19px 16px;
+    background-color: #5bbc79;
+}
+.header-text {
+    margin: 7px 10px 6px 0;
+    color: #fff;
+}
+.header-img  {
+    vertical-align: bottom;
+    border-radius: 50px;
+}
 
+@media screen and (max-width: 600px) {
+    .header-user{
+        display: none;
+    }
 }

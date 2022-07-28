@@ -1,27 +1,26 @@
 import { useEffect, useState } from 'react';
 import './CartItem.css';
 
-const CartItem = ({item, removeFromCart}) => {
+const CartItem = ({item, removeFromCart, getGrandTotal}) => {
     const [count, setCount] = useState(1);
-    const [totalPrice, setTotalPrice] = useState(count*item.price)
 
-    const increment = () => {
-        setCount(count + 1)
+    const changeCount = (item ,val) => {
+        getGrandTotal(item.price * val)
+        debugger;
+        if(count == 1 & val == -1) {
+            return removeFromCart(item.itemCode)
+        }
+        console.log('val: ', val, 'and count: ',count)
+        setCount(count + val)
+        console.log(' count: ', count)
     }
 
-    const decrement = () => {
-        if(count>1){
-            setCount(count - 1)
-        }
-        else if(count == 1) {
-            setCount(0)
-            removeFromCart(item.itemName)
-        }
-    }
+    console.log('item in Cart', item)
+    console.log(' count: ', count)
 
     useEffect(()=>{
-        setTotalPrice(count * item.price)
-    },[count])
+        getGrandTotal(item.price);
+    },[])
 
     return (
         <div className="cart-item">
@@ -29,12 +28,12 @@ const CartItem = ({item, removeFromCart}) => {
             <div className="ci-total">Total</div>
             <div className='ci-item-details'>
                 <div className='ci-amount'>
-                    <button className='ci-amount-btn' onClick={decrement}>-</button>
+                    <button className='ci-amount-btn' onClick={() => changeCount(item, -1)}>-</button>
                     <input className='ci-amount-num' value={count} readOnly/>
-                    <button className='ci-amount-btn' onClick={increment}>+</button>
+                    <button className='ci-amount-btn' onClick={() => changeCount(item, 1)}>+</button>
                 </div>
-                <div className='ci-quantity'>2 kg</div>
-                <div className='ci-price'>{totalPrice}</div>
+                <div className='ci-quantity'>Regular</div>
+                <div className='ci-price'>{count * item.price}</div>
             </div>
         </div>
     );

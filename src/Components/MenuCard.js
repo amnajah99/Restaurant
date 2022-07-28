@@ -6,20 +6,24 @@ const MenuCard = ({ item, showCartItems, removedItem }) => {
     const [inCart, setInCart] = useState(false);
     // console.log(item.itemName,'is in cart: ',inCart)
 
-    useEffect(()=>{
-        if (item.itemName == removedItem) {
-            setInCart(false);
-        }
-    },[removedItem])
-    
-    useEffect(()=>{
-        if(inCart) {
-            console.log("In cart",item);
-            showCartItems(item);
-        } else {
-            console.log("not in cart")
-        }
-    }, [inCart]);
+    // useEffect(()=>{
+    //     if (item.itemCode == removedItem) {
+    //         setInCart(false);
+    //     }
+    // },[removedItem])
+
+    // useEffect(()=>{
+    //     if(inCart) {
+    //         console.log("In cart",item);
+    //         showCartItems(item);
+    //     } else {
+    //         console.log("not in cart")
+    //     }
+    // }, [inCart]);
+
+    // []
+
+    // [{'food': 'biryani'}]
 
 
     return (
@@ -30,7 +34,7 @@ const MenuCard = ({ item, showCartItems, removedItem }) => {
                     <div className='menu-card-price'>Rs. {item.price}</div>
                     <div className='menu-card-amount'><img src={tick} /> 1X</div>
                 </div>
-                <button className='add-to-cart-btn' onClick={()=>setInCart(true)}>ADD TO CART</button>
+                <button className='add-to-cart-btn' onClick={() => showCartItems(item)}>ADD TO CART</button>
             </div>
         </div>
     );

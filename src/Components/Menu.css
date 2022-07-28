@@ -1,6 +1,31 @@
 .menu {
-    /* width: 35%; */
+    width: 50%;
+    border-right: 1px solid #e5e8ec;
+}
+.search-bar {
+    width: 99%;
+}
+.search-bar-input {
+    width: 100%;
+    border: 0;
+    height: 28px;
+    padding: 10px;
+    margin-bottom: 25px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e5e8ec;
+}
+.menu-span {
+    width: 95%;
+    /* margin-top: 20px; */
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    border-right: 1px solid #e5e8ec;
+}
+
+@media screen and (max-width: 600px) {
+    .menu {
+        width: 90%;
+        border: 0;
+        margin-top: 48px;
+    }
 }

@@ -1,27 +1,32 @@
 .header {
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     width: 100%;
     margin: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 104px 221px;
     justify-content: space-between;
 }
 .header-title {
-    width: 8.1%;
+    /* width: 8.1%; */
     margin: 16px 32px;
 }
 .header-user {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
+    
 }
 .header-bell-img {
-    padding: 16px;
+    padding: 16px 16px;
     background-color: #54ad70;
     margin: 0;
+    /* position: inline; */
+    /* vertical-align: bottom; */
 }
 .header-icon {
-    width: 12.4%;
-    height: 1;
+    /* width: 12.4%; */
+    /* height: 1; */
+    vertical-align: top;
     font-size: 13px;
-    padding: 14px 27px 10px 16px;
+    padding: 21px 27px 19px 16px;
     background-color: #5bbc79;
 }
 .header-text {
@@ -29,6 +34,15 @@
     color: #fff;
 }
 .header-img  {
-    padding-top: 7px;
-    object-fit: contain;
+    /* padding-top: 7px; */
+    /* object-fit: contain; */
+    vertical-align: bottom;
+    border-radius: 50px;
+    /* margin-top: 10px; */
+}
+
+@media screen and (max-width: 600px) {
+    .header-user{
+        display: none;
+    }
 }

@@ -1,5 +1,5 @@
 import './Header.css'
-import icon from '../images/cesar-img.jpg'
+import icon from '../images/cesar-img-2.jpg'
 import bell from '../images/bell.png';
 import logo from '../images/Logo.png';
 

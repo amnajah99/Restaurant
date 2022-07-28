@@ -3,7 +3,6 @@ import MenuCard from "./MenuCard";
 import './Menu.css';
 
 const Menu = ({ items, showCartItems, removedItem }) => {
-    // console.log('items.length: ', items.length);
 
     const [term, setTerm] = useState('');
 

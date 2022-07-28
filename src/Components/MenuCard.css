@@ -22,11 +22,9 @@
 .menu-card-amount {
     color: #5bbc79;
     display: none;
-    /* display: flex; */
     align-items: flex-start;
 }
 .add-to-cart-btn {
-    /* width: 96px; */
     font-size: 11px;
     color: #ffffff;
     background-color: black;

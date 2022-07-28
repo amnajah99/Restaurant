@@ -9,7 +9,6 @@ const Category = ({ menu_categories, showMenu }) => {
     const cat_list = menu_categories.map((cat, index) => <CategoryItem key={index} name={cat.name} items={cat.items} showMenu={showMenu} />)
 
     const mobilebtn = document.getElementsByClassName('category-hamburger');
-    // const nav = document.getElementById('category-nav');
 
     const mobileVersion = () => {
         var nav = document.getElementById('category-nav').style.display="block"

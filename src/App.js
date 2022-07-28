@@ -292,30 +292,18 @@ const App = () => {
     },
   ]
 
-  // // console.log(menu_categories[0].items[0].itemName);
-  // var filteredCatItems = menu_categories.filter(cat => cat.name.includes('CHINESE')).map((c) => c.items)
-  // console.log(filteredCatItems.length)
-  // var items = filteredCatItems.map((i)=>i.itemName)
-  // console.log(items)
-
   const [menuItems, setMenuItems] = useState(menu_categories[0].items);
   const [cartItems, setCartItems] = useState([]);
 
-  // const [removedItem, setRemovedItem] = useState('');
-
-
   const showMenu = (name, items) => {
-    // console.log(items);
     setMenuItems(items);
   }
 
   const removeFromCart = (itemCode) => {
-    // setRemovedItem(itemCode)
     setCartItems(cartItems.filter((i)=>i.itemCode != itemCode))
   }
 
   const showCartItems = (cItem) => {
-    //console.log("hello", cItem)
     if(cartItems.includes(cItem)) {
       return
     }
@@ -323,10 +311,6 @@ const App = () => {
       setCartItems(current => [...current, cItem])
     }  
   }
-
-  // console.log('removed: ',removedItem)
-
-  // console.log('cart item length: ',cartItems)
 
   return (
     <div className="app">
@@ -336,7 +320,6 @@ const App = () => {
         <Menu 
           items={menuItems} 
           showCartItems={showCartItems} 
-          // removedItem={removedItem}
         />
         <Cart cartItemsArr={cartItems} removeFromCart={removeFromCart}/>
       </div>

@@ -5,8 +5,7 @@ import './CategoryItem.css';
 
 const CategoryItem = ({name, items, showMenu}) => {
     const [menuList, setMenuList] = useState([]);
-    // const itemList = items.map((i)=>i.itemName);
-
+    
     useEffect(()=>{
         setMenuList(items)
     },[])
@@ -14,7 +13,6 @@ const CategoryItem = ({name, items, showMenu}) => {
     const showMenuItems = () => {
         showMenu(name, menuList);
     }
-    // console.log(menuList)
 
     return (
         <div className='cat-item' onClick={showMenuItems}>

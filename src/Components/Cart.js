@@ -6,15 +6,10 @@ import { useState } from 'react';
 const Cart = ({ cartItemsArr, removeFromCart }) => {
 
     const [grandTotal, setGrandTotal] = useState(0);
-    // const [itemCount, setItemCount] = useState(0)
 
     const getGrandTotal = (total) => {
         setGrandTotal(grandTotal + total)
     }
-
-    // const getItemCount = (count) =>{
-    //     setItemCount(itemCount + count)
-    // }
 
     const mapCart = cartItemsArr.map((item, index) => {
         return (<CartItem key={index} item={item} removeFromCart={removeFromCart} getGrandTotal={getGrandTotal} />);

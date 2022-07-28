@@ -29,6 +29,9 @@
 .cart-head-num {
     font-size: 16px;
 }
+.cart-head-icon{
+    display: none;
+}
 .cart-head-img {
     vertical-align: bottom;
 }
@@ -83,25 +86,38 @@
     height: 48px;
     width: 45%;
 }
+#close-cart-div {
+    color: black;
+    padding-left: 10px;
+    font-size: 23px;
+    display: none;
+}
 
 @media screen and (max-width: 600px) {
+    .cart-head {
+        border: 0;
+    }
     .cart-head-title {
         display: none;
     }
     .cart-head-icon {
-        /* padding-right: 10px; */
+        display: block;
     }
     .cart-head-num {
         display: none;
     }
-    .cart-items {
-        display: none;
-    }
-    .cart-total {
-        display: none;
-    }
     .cart {
-        width: 16%;
+        width: 10%;
+    }
+    .cart-responsive {
+        display: none;
+        height: 90vh;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        width: 90%;
+        z-index: 999;
+        background-color: #e5e8ec;
     }
 }
 

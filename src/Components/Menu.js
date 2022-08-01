@@ -5,10 +5,15 @@ import './Menu.css';
 const Menu = ({ items, showCartItems, isCartEmpty }) => {
 
     const [term, setTerm] = useState('');
-    const filteredItems = items.filter((i)=>i.itemName.toLowerCase().includes(term));
+    const filteredItems = items.filter((i) => i.itemName.toLowerCase().includes(term));
     const menuCard = filteredItems.map((item, index) => {
         return (
-            <MenuCard key={index} item={item} showCartItems={showCartItems} isCartEmpty={isCartEmpty} />
+            <MenuCard
+                key={index}
+                item={item}
+                showCartItems={showCartItems}
+                isCartEmpty={isCartEmpty}
+            />
         );
     })
     return (

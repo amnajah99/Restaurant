@@ -4,24 +4,16 @@
     width: 112px;
     padding: 8px;
     margin: 0 10px 10px 10px;
-    /* display: flex;
-    align-content: space-between;
-    flex-direction: column; */
 }
 .menu-card-title {
     font-size: 12px;
     margin-top: 16px;
     height: 44px;
 }
-.menu-card-stuff {
-    /* min-height: 100%; */
-}
 .menu-card-details {
     display: flex;
     justify-content: space-between;
     font-size: 11px;
-
-    /* margin-top: 23px; */
     margin-bottom: 9px;
 }
 .menu-card-price {
@@ -29,7 +21,6 @@
 }
 #menu-card-amount {
     color: #5bbc79;
-    /* display: none; */
     align-items: flex-start;
 }
 .add-to-cart-btn {

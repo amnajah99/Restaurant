@@ -41,12 +41,10 @@
     width: 80%;
     margin: auto;
     margin-top: 10%;
-    /* height: 60vh; */
 }
 .cart-total{
     margin: auto;
     width: 80%;
-    /* height: 35vh; */
 }
 .cart-total-head {
     display: flex;

@@ -1,40 +1,37 @@
+import { faL } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import tick from '../images/tick.svg'
 import './MenuCard.css';
 
-const MenuCard = ({ item, showCartItems, removedItem }) => {
-    const [inCart, setInCart] = useState(false);
-    // console.log(item.itemName,'is in cart: ',inCart)
+const MenuCard = ({ item, showCartItems, isCartEmpty }) => {
 
-    // useEffect(()=>{
-    //     if (item.itemCode == removedItem) {
-    //         setInCart(false);
-    //     }
-    // },[removedItem])
+    const [inCart, setInCart] = useState(false)
 
-    // useEffect(()=>{
-    //     if(inCart) {
-    //         console.log("In cart",item);
-    //         showCartItems(item);
-    //     } else {
-    //         console.log("not in cart")
-    //     }
-    // }, [inCart]);
+    useEffect(()=>{
+        if(item.amount <= 0 || isCartEmpty) {
+            setInCart(false)
+        } 
+    },[item.amount, isCartEmpty])
 
-    // []
-
-    // [{'food': 'biryani'}]
-
+    const addToCart = () => {
+        showCartItems(item);
+        setInCart(true)
+    }
 
     return (
         <div className="menu-card">
             <div className='menu-card-title'>{item.itemName}</div>
+            
             <div className='menu-card-stuff'>
                 <div className='menu-card-details'>
                     <div className='menu-card-price'>Rs. {item.price}</div>
-                    <div className='menu-card-amount'><img src={tick} /> 1X</div>
+                    <div id='menu-card-amount' style={{display : inCart ? 'inline' : 'none'}}>
+                        <img src={tick} />
+                        {item.amount}X
+                    </div>
                 </div>
-                <button className='add-to-cart-btn' onClick={() => showCartItems(item)}>ADD TO CART</button>
+                
+                <button className='add-to-cart-btn' onClick={addToCart}>ADD TO CART</button>
             </div>
         </div>
     );

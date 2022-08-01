@@ -1,26 +1,25 @@
 import { useEffect, useState } from 'react';
 import './CartItem.css';
 
-const CartItem = ({item, removeFromCart, getGrandTotal}) => {
+const CartItem = ({item, removeFromCart, getGrandTotal, getCartItemAmount}) => {
     const [count, setCount] = useState(1);
 
     const changeCount = (item ,val) => {
         getGrandTotal(item.price * val)
-        debugger;
         if(count == 1 & val == -1) {
+            getCartItemAmount(item.itemCode, 0)
             return removeFromCart(item.itemCode)
         }
-        console.log('val: ', val, 'and count: ',count)
         setCount(count + val)
-        console.log(' count: ', count)
     }
-
-    console.log('item in Cart', item)
-    console.log(' count: ', count)
 
     useEffect(()=>{
         getGrandTotal(item.price);
     },[])
+    
+    useEffect(()=>{
+        getCartItemAmount(item.itemCode, count)
+    }, [count])
 
     return (
         <div className="cart-item">

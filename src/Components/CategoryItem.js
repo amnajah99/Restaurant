@@ -5,7 +5,7 @@ import './CategoryItem.css';
 
 const CategoryItem = ({name, items, showMenu}) => {
     const [menuList, setMenuList] = useState([]);
-    
+
     useEffect(()=>{
         setMenuList(items)
     },[])

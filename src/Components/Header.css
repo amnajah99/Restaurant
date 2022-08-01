@@ -2,20 +2,32 @@
     width: 100%;
     margin: 0;
     display: grid;
-    grid-template-columns: 104px 221px;
+    grid-template-columns: 200px 221px;
     justify-content: space-between;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e8ec;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+    z-index: 888;
 }
 .header-title {
     margin: 16px 32px;
+    height: fit-content; 
+    color: #1d1d26;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    font-size: larger;
+}
+.header-title-color {
+    color: gray;
 }
 .header-user {
-    /* background-color: aquamarine; */
-    
+    height: fit-content;  
 }
 .header-bell-img {
     padding: 16px 16px;
     background-color: #54ad70;
     margin: 0;
+    vertical-align: bottom;
 }
 .header-icon {
     vertical-align: top;

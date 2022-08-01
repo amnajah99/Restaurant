@@ -6,21 +6,13 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 
-const Cart = ({ cartItemsArr, removeFromCart }) => {
+const Cart = ({ cartItemsArr, removeFromCart, getCartItemAmount, emptyCart }) => {
 
     const [grandTotal, setGrandTotal] = useState(0);
 
     const onCancel = () => {
-        // cartItemsArr = []
-        // for(var i; i < cartItemsArr ;i++) {
-        //     removeFromCart(cartItemsArr[i].itemCode)
-        // }
-        // cartItemsArr.map((item) => {
-        //     removeFromCart(item.itemCode)
-        // })
-        // cartItemsArr.forEach(item => {
-        //     removeFromCart(item.itemCode)
-        // });
+        emptyCart()
+        setGrandTotal(0)
     }
 
     const getGrandTotal = (total) => {
@@ -28,29 +20,31 @@ const Cart = ({ cartItemsArr, removeFromCart }) => {
     }
 
     const mapCart = cartItemsArr.map((item, index) => {
-        return (<CartItem key={index} item={item} removeFromCart={removeFromCart} getGrandTotal={getGrandTotal} />);
+        return (<CartItem key={index} item={item} removeFromCart={removeFromCart} getGrandTotal={getGrandTotal} getCartItemAmount={getCartItemAmount} />);
     })
 
     const mobileCart = () => {
         document.getElementById('cart-responsive').style.display = "inline";
         document.getElementById('close-cart-div').style.display = "block"
     }
-    
+
     const closeCart = () => {
-        document.getElementById('cart-responsive').style.display="none"
+        document.getElementById('cart-responsive').style.display = "none"
         document.getElementById('close-cart-div').style.display = "none"
     }
 
     return (
         <div id="cart" className="cart">
-            <div className="cart-head">
-                <div className="cart-head-left">
-                    <span id='cart-head-title' className='cart-head-title'>Cart Items</span>
-                    <span className='cart-head-count'>{cartItemsArr.length}</span>
-                </div>
-                <div className="cart-head-right">
-                    <span className='cart-head-num'>004</span>
-                    <span className='cart-head-icon' onClick={mobileCart}><img className='cart-head-img' src={icon} /></span>
+            <div className='cart-head-top'>
+                <div className="cart-head">
+                    <div className="cart-head-left">
+                        <span id='cart-head-title' className='cart-head-title'>Cart Items</span>
+                        <span className='cart-head-count'>{cartItemsArr.length}</span>
+                    </div>
+                    <div className="cart-head-right">
+                        <span className='cart-head-num'>004</span>
+                        <span className='cart-head-icon' onClick={mobileCart}><img className='cart-head-img' src={icon} /></span>
+                    </div>
                 </div>
             </div>
             <div id='cart-responsive' className='cart-responsive'>
